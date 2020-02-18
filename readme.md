@@ -62,3 +62,8 @@ Given two strings, write a method to decide if one is a permutation of the other
 
 ### URLify
 Write a method to replace all spaces in a string with '%20'. You may assume that the string has sufficient space at the end to hold the additional characters, and that you are given the "true" length of the string.
+
+### One Away
+There are three types of edits that can be performed on strings: insert a character, 
+remove a character, or replace a character. Given two strings, write a function to 
+check if they are one edit (or zero edits) away.
