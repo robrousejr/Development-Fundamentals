@@ -35,10 +35,15 @@
 
 ## Arrays & Strings
 
-### Hash Tables  
+### Hash Tables (Linked) 
 - Data structure that maps keys to values for highly efficient lookup. 
 1. Compute a key's hash code (usually int or long). *Note: 2 different keys could have same hash code*
 2. Map hash code to an index in the array. 
 *Ex: hash(key) % array_length.* 
 *Note: 2 different hash codes to map to same index.*
 3. At this index, there is a linked list of keys and values. Store the key and value in this index. We must use a linked list because of collisions: you could have two different keys with the same hash code, or two different hash codes that map to the same index. 
+
+<img src="https://i.ytimg.com/vi/T9gct6Dx-jo/maxresdefault.jpg" width="30%">
+
+* Here, the numbers 0-5 are **buckets**
+* The people are **keys.** When key's are in the same bucket they join the linked list
