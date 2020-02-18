@@ -10,8 +10,8 @@ using std::cout;
 using std::endl;
 
 int main(){
-    string a = "ple";
-    string b = "pale";
+    string a = "pale";
+    string b = "ple";
 
     cout << oneAway(a, b); 
 

@@ -48,12 +48,35 @@ bool oneAway(string a, string b){
     // insert 1 to b
     else if(a.size() > b.size())
     {
-        
+        string::iterator aIt = a.begin();
+        string::iterator bIt = b.begin();
+
+        // Iterate through larger string
+        for(aIt; aIt != a.end(); aIt++)
+        {
+            if(*aIt != *bIt)
+            {
+                cout << *aIt << " != " << *bIt << endl;
+
+                b.insert(bIt, *aIt);
+
+                cout << "Now b is " << b << endl;
+                return a == b ? true : false;
+            } 
+
+            bIt++;
+        }
     }
     // edit one character
     else
     {
-        
+        for(int i = 0; i < a.size(); i++) {
+            if(a[i] != b[i])
+            {
+                a[i] = b[i];
+                return a == b ? true : false;
+            }
+        }
     }
     
 }
