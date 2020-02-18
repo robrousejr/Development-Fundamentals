@@ -1,13 +1,16 @@
 // Implementing a hash table
 #include <iostream>
 #include <list>
+#include <stdio.h>
+#include <stdlib.h> 
+#include <time.h>
 
 using std::list;
 using std::cout; 
 using std::endl;
 
 class Hash {
-  int BUCKET; // number of buckets
+  int bucketNum; // number of buckets
   list<int> *table; // pointer to array containing buckets
   
   public:
@@ -17,7 +20,7 @@ class Hash {
 
     // maps values to keys
     int hashFunction(int x){
-      return (x % BUCKET); 
+      return (x % bucketNum); // mod assures value is smaller than bucketNum
     }
 
     void displayHash(); // displays hash
@@ -26,8 +29,8 @@ class Hash {
 // Hash constructor
 Hash::Hash(int num)
 {
-  this->BUCKET = num;
-  table = new list<int>[BUCKET]; // Create table 
+  this->bucketNum = num; // assign bucketNum
+  table = new list<int>[bucketNum]; // Create table with 'bucketNum' buckets 
 }
 
 // Inserts key
@@ -41,14 +44,16 @@ void Hash::insertItem(int key)
 void Hash::deleteItem(int key)
 {
   int index = hashFunction(key); // get index of key
-  list<int>::iterator i;
   
+  list<int>::iterator i; // iterates through hash table
+
   // Iterate through sub-list where key is (in case multiple elements are mapped there)
   for(i = table[index].begin(); i != table[index].end(); i++)
   {
+    // key was found
     if(*i == key)
     {
-      break; // key was found
+      break;
     }
   }
 
@@ -63,7 +68,7 @@ void Hash::deleteItem(int key)
 void Hash::displayHash()
 {
   // Iterate through hash table
-  for(int i = 0; i < BUCKET; i++)
+  for(int i = 0; i < bucketNum; i++)
   {
     cout << i;
 
@@ -77,23 +82,33 @@ void Hash::displayHash()
   }
 }
 
+// Fills an array with random numbers
+void fillArrayWithRandomNumbers(int *arr, int size)
+{
+  for(int i = 0; i < size; i++)
+  {
+    arr[i] = rand() % 100 + 1; // random number 1-100
+  }
+}
+
 int main()
 {
+
+  srand(time(NULL)); // initialize random seed
+
   // array that contains keys to be mapped 
-  int a[] = {15, 11, 27, 8, 12}; 
-  int n = sizeof(a)/sizeof(a[0]); 
+  int arr[6] = {};
+  int arrSize = sizeof(arr)/sizeof(arr[0]); // num of elements in array
+  fillArrayWithRandomNumbers(arr, arrSize);
+  
+  Hash hashTable(9); // 9 is count of buckets in hash table
   
   // insert the keys into the hash table 
-  Hash h(7);   // 7 is count of buckets in 
-               // hash table 
-  for (int i = 0; i < n; i++)  
-    h.insertItem(a[i]);   
-  
-  // delete 12 from hash table 
-  h.deleteItem(12); 
-  
+  for (int i = 0; i < arrSize; i++)  
+    hashTable.insertItem(arr[i]);
+
   // display the Hash table 
-  h.displayHash(); 
+  hashTable.displayHash(); 
   
   return 0; 
 }
