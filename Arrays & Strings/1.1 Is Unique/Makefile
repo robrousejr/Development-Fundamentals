@@ -6,11 +6,16 @@ cpp = isunique.cpp
 name = isunique
 
 # Compile and link .o into an exectutable
-all:
+
+
+compile:
 	g++ -c $(cpp)
 	g++ -o $(name) $(name).o
 
-run: all
+all: compile run
+
+run: 
 	./$(name)
+
 clean: 
 	rm -rf $(name) $(name).o
