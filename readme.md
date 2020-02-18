@@ -1,5 +1,10 @@
 # Fundamentals of Software Development
 
+## Unit Testing
+
+* Using [Catch](https://github.com/catchorg/Catch2) for unit testing
+* Followed their super easy tutorial on their Readme
+
 ## Makefile
 
 **[Source](https://www.cs.bu.edu/teaching/cpp/writing-makefiles/)**

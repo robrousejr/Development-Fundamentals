@@ -5,17 +5,25 @@ CFLAGS  = -g -Wall
 cpp = isunique.cpp
 name = isunique
 
-# Compile and link .o into an exectutable
+# List of .cpp files for tests to run
+testcpp = test.cpp
+testname = test
 
+# Compile and link .o into an exectutable
 
 compile:
 	g++ -c $(cpp)
 	g++ -o $(name) $(name).o
+	g++ -c $(testcpp)
+	g++ -o $(testname) $(testname).o
 
-all: compile run
+all: compile run runtests
 
 run: 
 	./$(name)
 
+runtests:
+	./$(testname)
+
 clean: 
-	rm -rf $(name) $(name).o
+	rm -rf $(name) $(testname) $(name).o $(testname).o
