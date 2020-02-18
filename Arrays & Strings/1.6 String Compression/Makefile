@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS  = -g -Wall
 
 # List of .cpp files to run
-cpp = oneaway.cpp
-name = oneaway
+cpp = stringcompression.cpp
+name = stringcompression
 
 # List of .cpp files for tests to run
 testcpp = test.cpp
