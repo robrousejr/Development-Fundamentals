@@ -7,9 +7,12 @@ the "true" length of the string.
 #include <iostream>
 #include "urlify.h"
 
+using std::cout;
+using std::endl;
 
 int main(){
 
-
+    string word = "    boom  bat  ";
+    cout << word << endl << URLify(word);
     return 0;
 }
