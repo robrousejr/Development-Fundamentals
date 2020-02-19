@@ -7,6 +7,11 @@ the original string. You can assume the string has only uppercase and lowercase 
 #include <iostream>
 #include "stringcompression.h"
 
-int main(){
+using std::string;
+using std::cout; 
+using std::endl;
 
+int main(){
+    string word = "aabcccccaaa";
+    cout << stringCompression(word) << endl;
 }
