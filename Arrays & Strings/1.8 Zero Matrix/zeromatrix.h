@@ -2,7 +2,7 @@
 
 using std::cout;
 
-// Print array to console
+// Print 2D array to console
 template<typename T, size_t row, size_t col>
 void printArray(T(&array)[row][col])
 {
@@ -14,4 +14,15 @@ void printArray(T(&array)[row][col])
         }
         cout << "\n";
     }
+}
+
+
+template<typename T, size_t row, size_t col>
+void zeroMatrix(T(&array)[row][col])
+{
+    /**
+     * 1. Find 0's and remember place
+     * 2. Make that row and column full of 0's
+     * Attempt this in-place if you can... 
+    */
 }
