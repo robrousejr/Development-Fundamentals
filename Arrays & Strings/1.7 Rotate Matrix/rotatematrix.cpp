@@ -12,8 +12,14 @@ int main(){
 
     char photo[4][4] = {{'A','B','C','D'}, {'E','F','G','H'}, {'I','J','K','L'}, {'M','N','O','P'}};
     printMatrix(photo);
-    cout << "\n\nRotating...\n";
+    cout << "\n\nRotating right...\n";
     rotateRight(photo);
+    printMatrix(photo);
+    cout << "\n\nRotating left...\n";
+    rotateLeft(photo);
+    printMatrix(photo);
+    cout << "\n\nRotating left...\n";
+    rotateLeft(photo);
     printMatrix(photo);
 
 }
