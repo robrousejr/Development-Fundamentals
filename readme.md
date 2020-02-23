@@ -97,3 +97,8 @@ call to isSubstring() (e.g., "waterbottle" is a rotation of"erbottlewat").
 
 #### Benefits
 * You can add/remove items from beginning of list in const time.
+
+### My Linked List Implementation
+* Singly linked list class containing a Node class
+* LinkedList class has member variable `head` tracking the head node
+* Node class has member variables `data` holding an int value and `next` which holds pointer to next Node
