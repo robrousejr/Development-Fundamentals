@@ -7,6 +7,7 @@ call to isSubstring() (e.g., "waterbottle" is a rotation of"erbottlewat").
 #include "stringrotation.h"
 
 using std::string;
+using std::cout;
 
 /**
  * PROVIDED FUNCTION (I didn't create this)
@@ -36,5 +37,5 @@ int isSubstring(string s1, string s2)
 
 
 int main(){
-
+    
 }
