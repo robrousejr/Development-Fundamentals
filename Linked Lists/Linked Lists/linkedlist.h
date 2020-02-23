@@ -3,38 +3,46 @@
 
 using std::cout;
 
-class Node {
+class LinkedList {
+    
+    class Node {
+    public: 
+        int data;
+        Node* next = NULL;
 
-public: 
-    int data;
-    Node* next = NULL;
+        Node(int d)
+        {
+            data = d;
+        }
+    };
 
-    Node(int d)
-    {
-        data = d;
-    }
+    public:
+        Node* head = NULL;
 
-};
+        // Gets value of head element
+        int getHead()
+        {
+            return this->head->data;
+        }
 
 /**
- * @param head_ref Pointer to pointer of head of list
  * @param d Value to be inserted in new node
  * Inserts node at end of linked list
 */
-void append(Node** head_ref, int d) {
+void append(int d) {
     
     Node* newNode = new Node(d); // Allocate pointer to new node
 
     newNode->next = NULL; // Since it'll be last node, make it's 'next' value NULL
 
     // If linked list is empty, make new node as head
-    if(*head_ref == NULL)
+    if(this->head == NULL)
     {
-        *head_ref = newNode;
+        this->head = newNode;
         return;
     }
 
-    Node* last = *head_ref; // Start at head
+    Node* last = this->head; // Start at head
 
     // Traverse until last node
     while(last->next != NULL)  
@@ -48,11 +56,16 @@ void append(Node** head_ref, int d) {
 /**
  * Prints out contents of list
 */
-void printList(Node *node)
+void printList()
 {
+    // Start at head
+    Node* node = this->head;
+
     while(node != NULL)
     {
         cout << node->data << " ";
         node = node->next;
     }
 }
+
+};
