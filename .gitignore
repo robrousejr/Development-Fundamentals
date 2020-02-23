@@ -1,4 +1,2 @@
-.vscode/settings.json
+.vscode
 *.stackdump
-.vscode/launch.json
-.vscode/tasks.json
