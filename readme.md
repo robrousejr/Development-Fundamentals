@@ -88,3 +88,12 @@ of another. Given two strings, s1 and s2, write code to check if s2 is a rotatio
 call to isSubstring() (e.g., "waterbottle" is a rotation of"erbottlewat"). 
 
 ## Linked Lists
+* Data structure that represents a sequence of nodes. In a singly linked list, each node points to the next node in the linked list. 
+* A doubly linked list gives each node pointers to both the next node and the previous node. 
+
+<img src="https://www.aoprogrammer.com/wp-content/uploads/2018/07/sllvsddll.png" width="40%">
+
+* Linked list doesn't have const time to access "index" like an array. You need to iterate through to find your element
+
+#### Benefits
+* You can add/remove items from beginning of list in const time.
