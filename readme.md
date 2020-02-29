@@ -106,3 +106,6 @@ call to isSubstring() (e.g., "waterbottle" is a rotation of"erbottlewat").
 ### 2.1 Remove Dups
 Write code to remove duplicates from an unsorted linked list
 * Function found in [../Linked Lists/linkedlist.h](/Linked%20Lists/Linked%20Lists/linkedlist.h)
+
+### 2.2 Return Kth to Last
+Implement an algorithm to find the kth to last element of a singly linked list. 
