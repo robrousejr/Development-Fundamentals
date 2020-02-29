@@ -106,6 +106,44 @@ void insertAfter(int afterNum, int d)
 }
 
 /**
+ * @param element = # of element to delete
+ * Deletes element at certain position (starting at 1)
+*/
+void deleteNode(int element)
+{
+    // Error checking 
+    if(element < 1 || element > this->getSize())
+    {
+        cerr << "ERROR: Can't delete element at " << element << " position because it doesn't exist\n";
+        return;
+    }
+
+    // Delete head node
+    if(element == 1)
+    {
+        Node* node = this->head; // Head node
+        this->head = node->next; // Create new head node
+        free(node); // Free memory of deleted node
+    }
+    else
+    {
+        Node* node = this->head->next; // Start at 2nd node
+        Node* prevNode = this->head; // Node before 
+
+        // Find element to delete
+        for(int i = 2; i < element; i++)
+        {
+            node = node->next;
+            prevNode = prevNode->next;
+        }
+
+        prevNode->next = node->next; // Make new order
+        free(node); // Free memory of deleted node
+    }
+
+}
+
+/**
  * Get size of linked list (# of elements)
 */
 int getSize()

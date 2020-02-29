@@ -23,5 +23,9 @@ int main()
 
     cout << "\nSize of linked list: " << a.getSize() << endl;
 
+    cout << "Delete item..." << endl;
+    a.deleteNode(1);
+    a.printList();
+
     return 0;
 }
