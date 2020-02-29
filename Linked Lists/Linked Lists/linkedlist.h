@@ -1,5 +1,7 @@
 #pragma once
 #include <iostream>
+#include <string>
+#include "../2.5 Sum Lists/sumlists.h"
 
 using std::cout;
 using std::cerr;
@@ -305,6 +307,53 @@ void deleteMiddleNode()
 
         this->deleteNode(middle);
     }
+}
+
+/**
+ * @param b Second linked list
+You have two numbers represented by a linked list, where each 
+node contains a single digit. The digits are stored in reverse order, 
+such that the 1 's digit is at the head of the list. Write a function 
+that adds the two numbers and returns the sum as a linked list. 
+*/
+LinkedList sumLists(LinkedList* b)
+{
+    std::string aString, bString;
+
+    Node* aHead = this->head;
+    Node* bHead = b->head;
+
+    while(aHead != NULL)
+    {
+        aString.insert(0, std::to_string(aHead->data)); // Insert digit at offset 0 (prepend)
+        aHead = aHead->next; // Iterate
+    }
+
+    while(bHead != NULL)
+    {
+        bString.insert(0, std::to_string(bHead->data)); // Insert digit at offset 0 (prepend)
+        bHead = bHead->next; // Iterate
+    }
+
+    // Convert numbers to int
+    int aNum = std::stoi(aString);
+    int bNum = std::stoi(bString);
+
+    // Create new LinkedList of sum
+    LinkedList sum;
+    int total = aNum + bNum;
+    int numDigs = numDigits(total);
+
+    // Insert digits into linked list
+    for(int i = 0; i < numDigs; i++)
+    {
+        int lastDigit = total % 10; // get last digit
+        total /= 10; // Remove last digit
+        sum.append(lastDigit); // Insert digit
+    }
+
+    return sum;
+
 }
 
 };
