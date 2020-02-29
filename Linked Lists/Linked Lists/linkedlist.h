@@ -77,7 +77,16 @@ void insertAfter(int afterNum, int d)
     // Don't allow insert before 1st element. Use push() for that
     if(afterNum < 1)
     {
-        cerr << "ERROR: You can only insert after the first element";
+        cerr << "ERROR: You can only insert after the first element\n";
+        return;
+    }
+
+    int size = this->getSize();
+    
+    // Can't insert after total size
+    if(afterNum > size)
+    {
+        cerr << "ERROR: There are only " << size << " elements. You can't insert after that point.\n";
         return;
     }
 

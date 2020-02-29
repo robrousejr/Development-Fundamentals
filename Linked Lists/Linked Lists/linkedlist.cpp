@@ -18,7 +18,7 @@ int main()
     a.printList();
 
     cout << "Inserting after 2nd element\n";
-    a.insertAfter(2, 21);
+    a.insertAfter(4, 21);
     a.printList();
 
     cout << "\nSize of linked list: " << a.getSize() << endl;
