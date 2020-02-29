@@ -125,3 +125,6 @@ function that adds the two numbers and returns the sum as a linked list.
 Input: (6 -> 1 -> 7) + (5 -> 9 -> 2). That is, 617 + 295.
 Output: 2 -> 1 -> 9. That is, 912
 ```
+
+### 2.6 Palindrome
+ Implement a function to check if a linked list is a palindrome. 
