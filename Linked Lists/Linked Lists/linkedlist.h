@@ -182,15 +182,15 @@ void printList()
 void removeDuplicates()
 {
     Node* node = this->head; // Start at head
-    int numNode = 1; // Number of node to start comparing with
+    int numNode = 1; // Offset of "node"
 
     // Traverse through list
     while(node != NULL)
     {
-        int numNodeCompare = numNode + 1; // Number of node being compared with
+        int numNodeCompare = numNode + 1; // Offset of "traverseNode"
         int val = node->data; // Holds int val of node
 
-        Node* traverseNode = node->next;
+        Node* traverseNode = node->next; // Searches rest of list for duplicates
 
         // Traverse through rest of list
         while(traverseNode != NULL)
@@ -200,11 +200,13 @@ void removeDuplicates()
                 deleteNode(numNodeCompare); // Delete duplicate
             }
 
-            traverseNode = traverseNode->next; // Iterate node
+            // Iterate node
+            traverseNode = traverseNode->next; 
             numNodeCompare++;
         }
 
-        node = node->next; // Iterate node
+        // Iterate node
+        node = node->next;
         numNode++;
     }
 }
