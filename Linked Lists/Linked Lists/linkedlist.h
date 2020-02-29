@@ -211,4 +211,39 @@ void removeDuplicates()
     }
 }
 
+/**
+ * @param val = Value to be deleted from LinkedList
+ * Remove all nodes of certain value in a list
+*/
+void deleteValue(int val)
+{
+    Node* node = this->head; // Traversal node
+    int count = 1; // # of element in linked list referencing "node"
+
+    if(node->data == val)
+    {
+        node = node->next;
+        deleteNode(1);
+        count = 1; // Reset count
+    }
+
+    // Traverse through List
+    while(node != NULL)
+    {
+        cout << "Count " << count << ", nodeval: " << node->data << "\n";
+
+        // Delete node
+        if(node->data == val)
+        {
+            node = node->next; 
+            deleteNode(count);
+        }
+        else
+        {
+            node = node->next;
+            count++;
+        }
+    }
+}
+
 };
