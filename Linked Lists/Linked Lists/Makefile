@@ -13,4 +13,4 @@ all:
 run: all
 	./$(name)
 clean: 
-	rm -rf $(name) $(name).o
+	rm -rf $(name) $(name).o *.stackdump
