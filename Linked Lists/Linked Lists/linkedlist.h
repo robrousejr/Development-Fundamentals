@@ -246,4 +246,34 @@ void deleteValue(int val)
     }
 }
 
+/**
+ * @param k = kth to last (ex: 0 == last, 1 == 1 before last)
+ * Find kth to last element of a singly linked list
+*/
+int kthToLast(int k)
+{
+    int size = this->getSize(); // # of elements in list
+    Node* node = this->head; // Traversal node
+
+    // Error checking
+    if(k > (size - 1))
+    {
+        cerr << "ERROR: Element doesn't exist at " << k << " spaces before end of list";
+        return -1;
+    }
+    else
+    {
+        int diff = size - k; // # of element to find
+
+        // Traverse through list
+        for(int i = 1; i < diff; i++)
+        {
+            node = node->next; // Iterate
+        }
+    }
+
+    return node->data;
+
+}
+
 };
