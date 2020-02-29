@@ -102,3 +102,6 @@ call to isSubstring() (e.g., "waterbottle" is a rotation of"erbottlewat").
 * Singly linked list class containing a Node class
 * LinkedList class has member variable `head` tracking the head node
 * Node class has member variables `data` holding an int value and `next` which holds pointer to next Node
+
+### 2.1 Remove Dups
+Write code to remove duplicates from an unsorted linked list
