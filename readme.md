@@ -109,3 +109,8 @@ Write code to remove duplicates from an unsorted linked list
 
 ### 2.2 Return Kth to Last
 Implement an algorithm to find the kth to last element of a singly linked list. 
+
+### 2.3 Delete Middle Node
+Implement an algorithm to delete a node in the middle (i.e., any node but
+the first and last node, not necessarily the exact middle) of a singly linked list, given only access to
+that node.
