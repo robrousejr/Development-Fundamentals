@@ -67,6 +67,27 @@ void push(int d)
 }
 
 /**
+ * @param afterNum = Insert after this iteration. Ex: 3 (insert after 3rd element)
+ * @param d = Value to be inserted
+*/
+void insertAfter(int afterNum, int d)
+{
+    Node* node = this->head; // Start at head
+
+    // Traverse until insert point
+    for(int i = 1; i < afterNum; i++)
+    {
+        node = node->next; 
+    }
+
+    Node* newNode = new Node(d); // Allocate pointer to new node
+
+    // Insert node after
+    newNode->next = node->next;
+    node->next = newNode;
+}
+
+/**
  * Prints out contents of list
 */
 void printList()

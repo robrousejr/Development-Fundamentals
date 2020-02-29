@@ -16,5 +16,9 @@ int main()
     a.push(7); // Insert 7 at start
     a.printList();
 
+    cout << "Inserting after 1st element\n";
+    a.insertAfter(1, 21);
+    a.printList();
+
     return 0;
 }
