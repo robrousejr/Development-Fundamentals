@@ -176,4 +176,37 @@ void printList()
     }
 }
 
+/*
+ * Remove duplicates in a list
+*/
+void removeDuplicates()
+{
+    Node* node = this->head; // Start at head
+    int numNode = 1; // Number of node to start comparing with
+
+    // Traverse through list
+    while(node != NULL)
+    {
+        int numNodeCompare = numNode + 1; // Number of node being compared with
+        int val = node->data; // Holds int val of node
+
+        Node* traverseNode = node->next;
+
+        // Traverse through rest of list
+        while(traverseNode != NULL)
+        {
+            if(traverseNode->data == val)
+            {
+                deleteNode(numNodeCompare); // Delete duplicate
+            }
+
+            traverseNode = traverseNode->next; // Iterate node
+            numNodeCompare++;
+        }
+
+        node = node->next; // Iterate node
+        numNode++;
+    }
+}
+
 };
