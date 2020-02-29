@@ -273,7 +273,38 @@ int kthToLast(int k)
     }
 
     return node->data;
+}
 
+/**
+ * Delete middle node (anything but first and last)
+ * If no middle node, delete a node close to the middle
+*/
+void deleteMiddleNode()
+{
+    int size = this->getSize();
+
+    // Error checking
+    if(size <= 2)
+    {
+        cerr << "ERROR: Can't delete middle node since no middle node exists...\n";
+        return;
+    }
+    else
+    {
+        int middle;
+
+        // if even
+        if(size % 2 == 0)
+        {
+            middle = size / 2;    
+        }
+        else
+        {
+            middle = (size / 2) + 1;
+        }
+
+        this->deleteNode(middle);
+    }
 }
 
 };
