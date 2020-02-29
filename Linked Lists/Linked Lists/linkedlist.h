@@ -1,10 +1,12 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <vector>
 #include "../2.5 Sum Lists/sumlists.h"
 
 using std::cout;
 using std::cerr;
+using std::vector;
 
 class LinkedList {
     
@@ -354,6 +356,53 @@ LinkedList sumLists(LinkedList* b)
 
     return sum;
 
+}
+
+/**
+ * Return true if linked list is a palindrome
+*/
+bool isPalindrome()
+{
+    int size = this->getSize(); // # of elements
+
+    // if even, not possible
+    if(size % 2 == 0)
+    {
+        return false;
+    }
+    else
+    {
+        vector<int> firstHalf;
+        vector<int> secondHalf;
+
+        int i; // traversal 
+        Node* node = this->head; // Start at head
+
+        // Iterate through first half
+        for(i = 0; i < ((size - 1) / 2); i++)
+        {   
+            firstHalf.push_back(node->data);
+            node = node->next; // Move to next
+        }
+
+        node = node->next; // Skip middle node
+
+        // Iterate through second half
+        for(int i = 0; i < ((size - 1) / 2); i++)
+        {
+            // Insert numbers at beginning
+            vector<int>::iterator it = secondHalf.begin();
+            secondHalf.insert(it, node->data);
+            node = node->next;
+        }
+
+        if(firstHalf == secondHalf)
+            return true;
+        else
+            return false;        
+        
+    }
+    
 }
 
 };
