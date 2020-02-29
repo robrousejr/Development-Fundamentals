@@ -10,8 +10,11 @@ int main()
     a.append(20);
     a.append(15);
     a.printList();
-    cout << "\nValue of head element: ";
-    cout << a.getHead();
+
+    cout << "Inserting node at start...\n";
+
+    a.push(7); // Insert 7 at start
+    a.printList();
 
     return 0;
 }

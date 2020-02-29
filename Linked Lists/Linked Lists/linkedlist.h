@@ -54,6 +54,19 @@ void append(int d) {
 }
 
 /**
+ * @param d Value to be inserted
+ * Inserts node at beginning of list
+*/
+void push(int d)
+{
+    Node* newNode = new Node(d); // Allocate pointer to new node
+
+    // Insert node before first node
+    newNode->next = this->head; 
+    this->head = newNode; 
+}
+
+/**
  * Prints out contents of list
 */
 void printList()
