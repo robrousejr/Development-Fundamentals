@@ -2,6 +2,7 @@
 #include <iostream>
 
 using std::cout;
+using std::cerr;
 
 class LinkedList {
     
@@ -69,9 +70,17 @@ void push(int d)
 /**
  * @param afterNum = Insert after this iteration. Ex: 3 (insert after 3rd element)
  * @param d = Value to be inserted
+ * TODO: Add getSize() error checking
 */
 void insertAfter(int afterNum, int d)
 {
+    // Don't allow insert before 1st element. Use push() for that
+    if(afterNum < 1)
+    {
+        cerr << "ERROR: You can only insert after the first element";
+        return;
+    }
+
     Node* node = this->head; // Start at head
 
     // Traverse until insert point
@@ -85,6 +94,24 @@ void insertAfter(int afterNum, int d)
     // Insert node after
     newNode->next = node->next;
     node->next = newNode;
+}
+
+/**
+ * Get size of linked list (# of elements)
+*/
+int getSize()
+{
+    // Start at head
+    Node* node = this->head;
+    int ct = 0;
+
+    while(node != NULL)
+    {
+        ct++;
+        node = node->next;
+    }
+
+    return ct;
 }
 
 /**

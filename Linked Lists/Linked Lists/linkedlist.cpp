@@ -2,6 +2,7 @@
 #include "linkedlist.h"
 
 using std::cout;
+using std::endl; 
 
 int main()
 {
@@ -16,9 +17,11 @@ int main()
     a.push(7); // Insert 7 at start
     a.printList();
 
-    cout << "Inserting after 1st element\n";
-    a.insertAfter(1, 21);
+    cout << "Inserting after 2nd element\n";
+    a.insertAfter(2, 21);
     a.printList();
+
+    cout << "\nSize of linked list: " << a.getSize() << endl;
 
     return 0;
 }
