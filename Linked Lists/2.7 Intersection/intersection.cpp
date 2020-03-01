@@ -19,13 +19,7 @@ int main()
         a.append(i);
     }
 
-    LinkedList b;
-    for(int i = 6; i < 10; i++)
-    {
-        b.append(i);
-    }
-
-    a.findIntersection(&b); // Find intersection with b
+    a.printList();
 
     return 0;
 }

@@ -426,7 +426,6 @@ Node* findIntersection(LinkedList* secondList)
     // Tailn node not the same, not intersecting
     if(!(&node == &secondListNode))
     {
-        cout << "Not intersecting!";
         throw -1; // error
     }
     // Intersecting
@@ -437,28 +436,43 @@ Node* findIntersection(LinkedList* secondList)
         int secondSize = secondList->getSize();
         int diff; // size difference
 
-        // Make this linked list smaller
+        // Traverse through this linked list
         if(size > secondSize)
         {
             diff = size - secondSize;
 
             // Set pointers to equal locations
+            for(int i = 0; i < diff; i++)
+            {
+                node = node->next;
+            }
 
         }
+        // Traverse through second linked list
         else if(size < secondSize)
         {    
             diff = secondSize - size;     
 
             // Set pointers to equal locations
-
+            for(int i = 0; i < diff; i++)
+            {
+                secondListNode = secondListNode->next;
+            }
         }
 
         // Now they're starting at same spot
         // Traverse until you have a collision
+        while(node != NULL)
+        {
+            // Collision
+            if(&node == &secondListNode)
+            {
+                return node; 
+            }
 
-
-
-        return node;
+            node = node->next;
+            secondListNode = secondListNode->next;
+        }
     }
 }
 
