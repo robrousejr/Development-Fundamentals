@@ -402,7 +402,78 @@ bool isPalindrome()
             return false;        
         
     }
-    
+}
+
+/**
+ * @param secondList = Other linkedList to compare with
+ * Determine if two lists intersect and return the intersecting node
+*/
+Node* findIntersection(LinkedList* secondList)
+{
+    // Iterate to end of both lists
+    Node* node = this->head;
+    while(node != NULL)
+    {
+        node = node->next;
+    }
+
+    Node* secondListNode = secondList->head;
+    while(secondListNode != NULL)
+    {
+        secondListNode = secondListNode->next;
+    }
+
+    // Tailn node not the same, not intersecting
+    if(!(&node == &secondListNode))
+    {
+        throw -1; // error
+    }
+    // Intersecting
+    else
+    {
+        // Make the same size
+        int size = this->getSize();
+        int secondSize = secondList->getSize();
+        int diff; // size difference
+
+        // Traverse through this linked list
+        if(size > secondSize)
+        {
+            diff = size - secondSize;
+
+            // Set pointers to equal locations
+            for(int i = 0; i < diff; i++)
+            {
+                node = node->next;
+            }
+
+        }
+        // Traverse through second linked list
+        else if(size < secondSize)
+        {    
+            diff = secondSize - size;     
+
+            // Set pointers to equal locations
+            for(int i = 0; i < diff; i++)
+            {
+                secondListNode = secondListNode->next;
+            }
+        }
+
+        // Now they're starting at same spot
+        // Traverse until you have a collision
+        while(node != NULL)
+        {
+            // Collision
+            if(&node == &secondListNode)
+            {
+                return node; 
+            }
+
+            node = node->next;
+            secondListNode = secondListNode->next;
+        }
+    }
 }
 
 };
