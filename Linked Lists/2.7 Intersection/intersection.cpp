@@ -13,6 +13,19 @@ using std::endl;
 
 int main()
 {   
+    LinkedList a;
+    for(int i = 0; i < 5; i++)
+    {
+        a.append(i);
+    }
+
+    LinkedList b;
+    for(int i = 6; i < 10; i++)
+    {
+        b.append(i);
+    }
+
+    a.findIntersection(&b); // Find intersection with b
 
     return 0;
 }
