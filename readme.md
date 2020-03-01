@@ -139,3 +139,6 @@ as the jth node of the second linked list, then they are intersecting.
 <img src="https://i.imgur.com/SRWBsoe.png">
 
 ## Stacks & Queues
+
+### 3.2 Stack Min
+Find and return the minimum element in a stack
