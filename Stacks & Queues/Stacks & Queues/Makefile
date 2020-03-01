@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS  = -g -Wall
 
 # List of .cpp files to run
-cpp = stack.cpp
-name = stack
+cpp = stackqueue.cpp
+name = stackqueue
 
 # Compile and link .o into an exectutable
 all:

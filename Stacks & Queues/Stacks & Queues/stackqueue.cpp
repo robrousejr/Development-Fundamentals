@@ -1,5 +1,5 @@
 #include <iostream>
-#include "stack.h"
+#include "stackqueue.h"
 #include <stack>
 
 using std::cout;

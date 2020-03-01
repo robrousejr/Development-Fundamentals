@@ -12,7 +12,7 @@ void printPopStack(stack<int> &a)
 {
     while(!a.empty())
     {
-        cout << " " << a.top(); 
+        cout << a.top() << " "; 
         a.pop();
     }
 }
