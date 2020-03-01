@@ -135,5 +135,7 @@ intersecting node. Note that the intersection is defined based on reference, not
 That is, if the kth node of the first linked list is the exact same node (by reference) 
 as the jth node of the second linked list, then they are intersecting. 
 
-**Intersecting Singly Linked List Example**
+**Intersecting Singly Linked List Example**<br>
 <img src="https://i.imgur.com/SRWBsoe.png">
+
+## Stacks & Queues
