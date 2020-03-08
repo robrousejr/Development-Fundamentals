@@ -102,10 +102,11 @@ call to isSubstring() (e.g., "waterbottle" is a rotation of"erbottlewat").
 * Singly linked list class containing a Node class
 * LinkedList class has member variable `head` tracking the head node
 * Node class has member variables `data` holding an int value and `next` which holds pointer to next Node
+* All 2.x functions found in [../Linked Lists/linkedlist.h](/Linked%20Lists/Linked%20Lists/linkedlist.h)
+
 
 ### 2.1 Remove Dups
 Write code to remove duplicates from an unsorted linked list
-* Function found in [../Linked Lists/linkedlist.h](/Linked%20Lists/Linked%20Lists/linkedlist.h)
 
 ### 2.2 Return Kth to Last
 Implement an algorithm to find the kth to last element of a singly linked list. 
