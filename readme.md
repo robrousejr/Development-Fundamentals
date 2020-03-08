@@ -138,3 +138,11 @@ as the jth node of the second linked list, then they are intersecting.
 
 **Intersecting Singly Linked List Example**<br>
 <img src="https://i.imgur.com/SRWBsoe.png">
+
+## Stacks & Queues
+* Implemented a `MyStack` class with custom push, pop, top functions
+* Functions can be found in [../Stacks & Queues/stackqueue.h](/Stacks%20&%20Queues/Stacks%20&%20Queues/stackqueue.h)
+
+### 3.2
+Implement a function `min` which returns the minimum element. 
+Should operate in O(1) time

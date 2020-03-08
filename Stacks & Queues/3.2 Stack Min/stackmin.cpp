@@ -11,14 +11,18 @@ using std::stack;
 
 int main()
 {
-    stack<int> a;
-
-    // Fill stack
-    for(int i = 0; i < 10; i++)
-    {
-        a.push(i);
-    }
-
+    MyStack s;
+    s.push(7);
+    s.push(10);
+    s.push(12);
+    s.push(111);
+    s.push(10);
+    s.push(1);
+    s.getMin();
+    s.pop();
+    s.pop();
+    s.getMin();
+    s.top();
 
     return 0;
 }
